@@ -47,11 +47,6 @@ const cardVariants = {
   },
 };
 
-const scrollRevealVariants = {
-  hidden: { opacity: 0, y: 75 },
-  visible: { opacity: 1, y: 0 }
-};
-
 export default function Features() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [networkLines, setNetworkLines] = useState<
