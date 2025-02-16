@@ -46,7 +46,13 @@ export default function Navbar() {
 
   // Update the menu items array (remove Home, add Contact)
   const menuItems = [
-    { name: 'Features', id: 'features', path: '/features', gradient: 'from-blue-400 to-cyan-400' },
+    { 
+      name: 'Features', 
+      id: 'features', 
+      path: '/features', 
+      gradient: 'from-blue-400 to-cyan-400',
+      onClick: () => scrollToSection('features')
+    },
     { name: 'Technology', id: 'technology', path: '/technology', gradient: 'from-indigo-400 to-blue-400' },
     { name: 'Agents', id: 'agents', path: '/agents', gradient: 'from-emerald-400 to-green-400' },
     { name: 'Pricing', id: 'pricing', path: '/pricing', gradient: 'from-pink-400 to-rose-400' },
@@ -161,14 +167,17 @@ export default function Navbar() {
 
           {/* Menu Items with Gradient Hover */}
           <div className="hidden md:flex space-x-8">
-            {menuItems.map(({ name, path, gradient }, index) => (
+            {menuItems.map(({ name, path, gradient, onClick }, index) => (
               <motion.div
                 key={name}
                 variants={itemVariants}
                 custom={index}
               >
                 <Link href={path}>
-                  <span className="relative text-gray-300 hover:text-transparent hover:bg-gradient-to-r hover:bg-clip-text cursor-pointer transition-all duration-300 group text-sm font-medium">
+                  <span 
+                    onClick={() => onClick?.()}
+                    className="relative text-gray-300 hover:text-transparent hover:bg-gradient-to-r hover:bg-clip-text cursor-pointer transition-all duration-300 group text-sm font-medium"
+                  >
                     <span className={`bg-gradient-to-r ${gradient} opacity-0 group-hover:opacity-100 absolute inset-0 bg-clip-text transition-opacity duration-300`}>
                       {name}
                     </span>
@@ -184,7 +193,7 @@ export default function Navbar() {
 
           {/* Enhanced Get Started Button */}
           <motion.div variants={itemVariants} className="hidden md:flex items-center">
-            <Link href="/get-started">
+            <Link href="#">
               <button className="relative overflow-hidden px-6 py-2.5 rounded-lg group">
                 <span className="absolute inset-0 w-full h-full transition duration-500 transform -translate-x-full bg-gradient-to-r from-purple-600 via-blue-500 to-emerald-500 group-hover:translate-x-0"></span>
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 to-blue-500"></span>

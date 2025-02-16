@@ -1,5 +1,5 @@
 "use client"
-import { motion, useAnimationControls } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -14,7 +14,6 @@ const messages = [
 export default function Home() {
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
-  const controls = useAnimationControls();
 
   useEffect(() => {
     let currentIndex = 0;

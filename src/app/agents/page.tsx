@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion} from 'framer-motion';
 
 export default function Agents() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);

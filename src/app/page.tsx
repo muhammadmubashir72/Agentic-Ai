@@ -1,7 +1,6 @@
 "use client"
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
-import Image from "next/image";
 import Home from "./home/page";
 import Features from "./features/page";
 import Technology from './technology/page';

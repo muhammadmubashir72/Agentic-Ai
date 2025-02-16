@@ -48,18 +48,8 @@ const cardVariants = {
 };
 
 const scrollRevealVariants = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
+  hidden: { opacity: 0, y: 75 },
+  visible: { opacity: 1, y: 0 }
 };
 
 export default function Features() {
